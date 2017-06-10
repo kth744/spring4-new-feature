@@ -1,0 +1,2 @@
+  genericStringTest.print("aaaa");
+  genericIntegerTest.print(11111);

@@ -1,0 +1,2 @@
+  genericTest.print(console);
+  fileTest.print(file);
