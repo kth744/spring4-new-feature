@@ -150,46 +150,43 @@ ProfileCondition은 AnnotatedTypeMetadata에서 @Profile의 모든 애너테이�
 
 
 # 두개의 조건에 부합될 경우
-
-두개의 조건에 부합하게 될 경우 다음과 같이 첫번째로 대상이 되는 컴포넌트를 주입하게 된다
-
-
+두개의 조건에 부합하게 될 경우 다음과 같이 첫번째로 대상이 되는 컴포넌트를 주입하게 된다.
 
 ```java
-	/*
-	 * Determine if an item should be skipped based on {@code @Conditional} annotations.
-	 * @param metadata the meta data
-	 * @param phase the phase of the call
-	 * @return if the item should be skipped
-	 */
-	public boolean shouldSkip(AnnotatedTypeMetadata metadata, ConfigurationPhase phase) {
-		if (metadata == null || !metadata.isAnnotated(Conditional.class.getName())) {
-			return false;
-		}
-
-		if (phase == null) {
-			if (metadata instanceof AnnotationMetadata &&
-					ConfigurationClassUtils.isConfigurationCandidate((AnnotationMetadata) metadata)) {
-				return shouldSkip(metadata, ConfigurationPhase.PARSE_CONFIGURATION);
-			}
-			return shouldSkip(metadata, ConfigurationPhase.REGISTER_BEAN);
-		}
-
-		for (String[] conditionClasses : getConditionClasses(metadata)) {
-			for (String conditionClass : conditionClasses) {
-				Condition condition = getCondition(conditionClass, this.context.getClassLoader());
-				ConfigurationPhase requiredPhase = null;
-				if (condition instanceof ConfigurationCondition) {
-					requiredPhase = ((ConfigurationCondition) condition).getConfigurationPhase();
-				}
-				if (requiredPhase == null || requiredPhase == phase) {
-					if (!condition.matches(this.context, metadata)) {
-						return true;
-					}
-				}
-			}
-		}
-
+/**
+ * Determine if an item should be skipped based on {@code @Conditional} annotations.
+ * @param metadata the meta data
+ * @param phase the phase of the call
+ * @return if the item should be skipped
+ */
+public boolean shouldSkip(AnnotatedTypeMetadata metadata, ConfigurationPhase phase) {
+	if (metadata == null || !metadata.isAnnotated(Conditional.class.getName())) {
 		return false;
 	}
+
+	if (phase == null) {
+		if (metadata instanceof AnnotationMetadata &&
+				ConfigurationClassUtils.isConfigurationCandidate((AnnotationMetadata) metadata)) {
+			return shouldSkip(metadata, ConfigurationPhase.PARSE_CONFIGURATION);
+		}
+		return shouldSkip(metadata, ConfigurationPhase.REGISTER_BEAN);
+	}
+a
+	for (String[] conditionClasses : getConditionClasses(metadata)) {
+		for (String conditionClass : conditionClasses) {
+			Condition condition = getCondition(conditionClass, this.context.getClassLoader());
+			ConfigurationPhase requiredPhase = null;
+			if (condition instanceof ConfigurationCondition) {
+				requiredPhase = ((ConfigurationCondition) condition).getConfigurationPhase();
+			}
+			if (requiredPhase == null || requiredPhase == phase) {
+				if (!condition.matches(this.context, metadata)) {
+					return true;
+				}
+			}
+		}
+	}
+
+	return false;
+}
 ```
