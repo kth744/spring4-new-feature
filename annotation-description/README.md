@@ -1,3 +1,6 @@
+### 참조링크
+- https://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html#beans-java-bean-description
+
 ### Bean description
 
 Sometimes it is helpful to provide a more detailed textual description of a bean. This can be particularly useful when beans are exposed (perhaps via JMX) for monitoring purposes.
@@ -15,5 +18,3 @@ public class AppConfig {
 
 }
 ```
-
-- https://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html#beans-java-bean-description
