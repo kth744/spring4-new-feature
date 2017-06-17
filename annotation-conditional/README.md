@@ -4,12 +4,8 @@
  - 두번째 : https://www.intertech.com/Blog/spring-4-conditional-bean-configuration/
 
 # @Conditional 지원
-
 조건에 따라 빈을 설정하거나 하지 않을 수 있다.
-
 출처 : 서적 Spring in Action (스프링 인 액션)
-
-
 
 다음과 같이 @Conditional 어노테이션을 사용할 수 있다.
 
@@ -55,7 +51,7 @@ public interface ConditionContext {
 }
 ```
 
-### 두개의 조건에 부합될 경우
+## 두개의 조건에 부합될 경우
 두개의 조건에 부합하게 될 경우 다음과 같이 첫번째로 대상이 되는 컴포넌트를 주입하게 된다.
 
 ```
