@@ -171,7 +171,7 @@ public boolean shouldSkip(AnnotatedTypeMetadata metadata, ConfigurationPhase pha
 		}
 		return shouldSkip(metadata, ConfigurationPhase.REGISTER_BEAN);
 	}
-a
+
 	for (String[] conditionClasses : getConditionClasses(metadata)) {
 		for (String conditionClass : conditionClasses) {
 			Condition condition = getCondition(conditionClass, this.context.getClassLoader());
