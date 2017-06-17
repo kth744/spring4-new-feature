@@ -1,11 +1,7 @@
 
-# 1 source
- - http://dev.anyframejava.org/docs/anyframe/plugin/essential/core/1.5.2-SNAPSHOT/reference/html/ch03.html
-
-
-
-
-
+# 참조링크
+ - 첫번째 : http://dev.anyframejava.org/docs/anyframe/plugin/essential/core/1.5.2-SNAPSHOT/reference/html/ch03.html
+ - 두번째 : https://www.intertech.com/Blog/spring-4-conditional-bean-configuration/
 
 # @Conditional 지원
 
