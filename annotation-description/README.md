@@ -15,3 +15,5 @@ public class AppConfig {
 
 }
 ```
+
+- https://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html#beans-java-bean-description
