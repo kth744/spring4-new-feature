@@ -1,10 +1,10 @@
-### 애너테이션 기반 종단점(endpoint)을 지원하는 @Jms 애노테이션
+## 애너테이션 기반 종단점(endpoint)을 지원하는 @Jms 애노테이션
 
 ## 참조 ##
 - Spring in Action (17장 Spring Messaging, p549)
 - https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/jms.html
 
-Jms (java message service)
+### Jms (java message service)
 - Async Message 처리
 - ActiveMQ 오픈 소스를 활용(e.g. like Tomcat, Hadoop ...)
 - Spring Config로 ActiveMQ와 연동(Connector, Url ...)
