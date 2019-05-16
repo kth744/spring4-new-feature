@@ -1,4 +1,4 @@
-# Spring framework 4.x
+# Spring framework 4.x 테스트
 일부 새로운 기능이 추가됐고, 자바 SE 8, 그루비 2, 자바 EE 7의 일부를 지원한다. 기능은 다음과 같다.
 
  - 그루비 DSL을 통한 외부 빈 설정을 지원한다.
